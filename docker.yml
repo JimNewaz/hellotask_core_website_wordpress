@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:5000"
+    environment:
+      WORDPRESS_DB_HOST: localhost
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: '@#HtPas#$m^*0971Q'
+      WORDPRESS_DB_NAME: core_website
+    volumes:
+      - wordpress:/var/www/html/demo/
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: '@#HtPas#$m^*0971Q'
+      MYSQL_DATABASE: core_website
+      MYSQL_USER: root
+      MYSQL_PASSWORD: '@#HtPas#$m^*0971Q'
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  wordpress:
+  mysql:
